@@ -35,7 +35,12 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'city'=>'required',
+            'fees'=>'required',
+        ]);
+      return  Student::create($request->all());
     }
 
     /**
@@ -69,7 +74,9 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $student =Student::find($id);
+        $student->update($request->all());
+        return $student; 
     }
 
     /**
