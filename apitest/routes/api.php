@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
 Route::post('post',[HomeController::class,'post']);
 Route::put('put',[HomeController::class,'put']);
 Route::delete('delete',[HomeController::class,'delete']);
+//Route 
+Route::get('students',[StudentController::class,'index']);
