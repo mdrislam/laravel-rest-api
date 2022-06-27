@@ -28,4 +28,4 @@ Route::delete('delete',[HomeController::class,'delete']);
 Route::get('students',[StudentController::class,'index']);
 Route::get('students/{id}',[StudentController::class,'show']);
 Route::post('students',[StudentController::class,'store']);
-Route::put('students',[StudentController::class,'store']);
+Route::put('students/{id}',[StudentController::class,'update']);
