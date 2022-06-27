@@ -87,6 +87,30 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+
+        try {
+            $val=Student::find($id)->delete(); // Should be $this->buildXMLHeader();
+            if($val==1){
+                return [
+                    "status"=>true,
+                    "message"=>"Successfully Deleted"
+                ];
+            }else{
+                return [
+                    "status"=>false,
+                    "message"=>"Something went to wrong"
+                ];
+            }
+        } catch (\Throwable  $e) {
+            return [
+                "status"=>false,
+                "message"=>"Already Deleted"
+            ];
+                 // return $e;
+          }
+
+        
+       
     }
 }
