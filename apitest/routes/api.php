@@ -26,3 +26,4 @@ Route::put('put',[HomeController::class,'put']);
 Route::delete('delete',[HomeController::class,'delete']);
 //Route 
 Route::get('students',[StudentController::class,'index']);
+Route::get('students/{id}',[StudentController::class,'show']);
