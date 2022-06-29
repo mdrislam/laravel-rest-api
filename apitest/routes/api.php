@@ -44,12 +44,16 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::post('post',[HomeController::class,'post']);
     Route::put('put',[HomeController::class,'put']);
     Route::delete('delete',[HomeController::class,'delete']);
-    Route::get('students',[StudentController::class,'index']);
-    Route::get('students/{id}',[StudentController::class,'show']);
-    Route::post('students',[StudentController::class,'store']);
-    Route::put('students/{id}',[StudentController::class,'update']);
-    Route::delete('students/{id}',[StudentController::class,'destroy']);
-    Route::get('students/search/{city}',[StudentController::class,'search']);
+    // Route::get('students',[StudentController::class,'index']);
+    // Route::get('students/{id}',[StudentController::class,'show']);
+    // Route::post('students',[StudentController::class,'store']);
+    // Route::put('students/{id}',[StudentController::class,'update']);
+    // Route::delete('students/{id}',[StudentController::class,'destroy']);
+    // Route::get('students/search/{city}',[StudentController::class,'search']);
+   
+    // Resourching Route 
+   Route::resource('students',StudentController::class);
+
     Route::post('logout',[UserController::class,'logout']);
 
 });
