@@ -110,7 +110,17 @@ class StudentController extends Controller
                  // return $e;
           }
 
-        
-       
+    }
+
+     /**
+     * Search By City From storage
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function search($city)
+    {
+     return Student::where('city',$city)->get(); 
     }
 }
